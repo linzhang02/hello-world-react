@@ -1,57 +1,69 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './Home';
+import ThingsToRead from './ThingsToRead';
 import './App.css';
+import KeyboardHelp from './KeyboardHelp';
 
 function App() {
-  const [hobbies, setHobbies] = useState([
-    'Video Games',
-    'Game Development',
-    'watching movies',
-    'Skiing',
-    'Hiking',
-    'Biking',
-  ]);
+  const navRefs = [useRef(null), useRef(null), useRef(null)];
 
-  const sortHobbies = () => {
-    const sorted = [...hobbies].sort((a, b) =>
-      a.toLowerCase().localeCompare(b.toLowerCase())
-    );
-    setHobbies(sorted);
+  const handleKeyDown = (e, index) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      const nextIndex = (index + 1) % navRefs.length;
+      navRefs[nextIndex].current.focus();
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      const prevIndex = (index - 1 + navRefs.length) % navRefs.length;
+      navRefs[prevIndex].current.focus();
+    }
   };
 
   return (
-    <div className="App">
-      <h1>Welcome To My Webpage !!</h1>
-
-      <div>
-        <h2>About me</h2>
-        <img
-          src="https://www.uwb.edu/wp-content/uploads/2023/05/gml-generic-bronze-W-plaza-square.jpg"
-          alt="uwb"
-          width="200px"
-        />
-        <p>
-          I am a senior studying at <strong>University of Washington Bothell</strong>.
-        </p>
-        <p>
-          I am taking <i>CSS 480</i> and <i>CSS 481</i> this quarter.
-        </p>
-        <p>
-          I learned a little HTML/CSS & Javascript in CSS 481 so far but still pretty new to React.
-        </p>
-      </div>
-
-      <div>
-        <h2>My Hobbies</h2>
-        <ul>
-          {hobbies.map((hobby, index) => (
-            <li key={index}>{hobby}</li>
-          ))}
+    <Router>
+      <nav aria-label="Main navigation">
+        <ul className="nav">
+          <li>
+            <Link
+              to="/"
+              ref={navRefs[0]}
+              tabIndex="0"
+              onKeyDown={(e) => handleKeyDown(e, 0)}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/things-to-read"
+              ref={navRefs[1]}
+              tabIndex="0"
+              onKeyDown={(e) => handleKeyDown(e, 1)}
+            >
+              Things to Read
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/keyboard-help"
+              ref={navRefs[2]}
+              tabIndex="0"
+              onKeyDown={(e) => handleKeyDown(e, 2)}
+            >
+              Keyboard Help
+            </Link>
+          </li>
         </ul>
-        <button onClick={sortHobbies}>Sort</button>
-      </div>
-    </div>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/things-to-read" element={<ThingsToRead />} />
+        <Route path="/keyboard-help" element={<KeyboardHelp />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
-
