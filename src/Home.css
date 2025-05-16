@@ -1,0 +1,206 @@
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to right, #d4af37, #ffcc00);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 12px 0;
+  margin: 0;
+}
+
+.nav li {
+  list-style: none;
+  flex: 1; /* Each list item takes equal space */
+  text-align: center;
+}
+
+.nav li a {
+  display: inline-block;
+  padding: 14px 28px; /* bigger padding */
+  font-weight: 700;    /* bolder text */
+  font-size: 18px;     /* larger font */
+  width: 90%; /* Full width */
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #000;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #fffbe6;
+  color: #000;
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+.nav li a:focus {
+  outline: none;
+  border-color: #ffcc00;
+  background-color: #fffbe6;
+}
+
+.nav li a:active {
+  transform: scale(0.98);
+  background-color: #ffcc00;
+  color: #000;
+}
+
+
+
+.intro-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  background-color: #fff4cc;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000;
+}
+
+.intro-section p {
+  margin: 16px 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.greeting {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.accent {
+  color: #005a9c;
+  font-weight: bold;
+}
+
+.major-line {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.classes-line {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.home-content {
+  max-width: 800px;
+  text-align: center;
+}
+.home-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hobby-section {
+  text-align: center;
+  margin: 60px auto;
+}
+
+.hobby-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #040d16;
+}
+
+.hobby-card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 500px; /* sopace between the lsit and buttom*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hobby-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hobby-list li {
+  background-color: #f9f9f9;
+  border: 2px solid #d4af37;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #003366;
+  transition: background-color 0.3s ease;
+}
+
+.hobby-list li:hover {
+  background-color: #fffbe6;
+  cursor: pointer;
+}
+
+.hobby-list li:focus {
+  outline: 3px solid #ffcc00;
+  background-color: #fffbe6;
+}
+
+.sort-button {
+  background-color: #005a9c;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sort-button:hover {
+  background-color: #004a87;
+}
+
+.sort-button:focus {
+  outline: 3px solid #ffcc00;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  color:#003940;
+  background-color: #fffbe6;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-pic {
+  border: 5px solid #d4af37;        /* Gold border */
+  border-radius: 50%;               /* Makes it circular */
+  padding: 4px;                     /* Optional space inside the border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Soft drop shadow */
+  transition: transform 0.3s ease;
+
+}
+
+.profile-pic:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  transform: rotate(-10deg);
+}

@@ -31,7 +31,7 @@ function App() {
               tabIndex="0"
               onKeyDown={(e) => handleKeyDown(e, 0)}
             >
-              Home
+              🏠 Home
             </Link>
           </li>
           <li>
@@ -41,7 +41,7 @@ function App() {
               tabIndex="0"
               onKeyDown={(e) => handleKeyDown(e, 1)}
             >
-              Things to Read
+             📖 Things To Read
             </Link>
           </li>
           <li>
@@ -51,7 +51,7 @@ function App() {
               tabIndex="0"
               onKeyDown={(e) => handleKeyDown(e, 2)}
             >
-              Keyboard Help
+              ⌨️Keyboard Help
             </Link>
           </li>
         </ul>

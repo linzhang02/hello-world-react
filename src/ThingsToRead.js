@@ -1,4 +1,5 @@
 import React from 'react';
+import './ThingsToRead.css'; // Create this CSS file if not already
 
 const links = [
   { name: "MDN Web Docs", url: "https://developer.mozilla.org/" },
@@ -7,7 +8,7 @@ const links = [
   { name: "CSS Tricks", url: "https://css-tricks.com/" },
   { name: "JavaScript Info", url: "https://javascript.info/" },
   { name: "Stack Overflow", url: "https://stackoverflow.com/" },
-  { name: "University of Washington - bothell", url: "https://www.uwb.edu/" },
+  { name: "University of Washington - Bothell", url: "https://www.uwb.edu/" },
   { name: "Apex Legends News", url: "https://www.ea.com/games/apex-legends/apex-legends/news" },
   { name: "CNN", url: "https://www.cnn.com/" },
   { name: "New York Times", url: "https://www.nytimes.com/" },
@@ -15,9 +16,9 @@ const links = [
 
 function ThingsToRead() {
   return (
-    <div>
+    <div className="things-container">
       <h1>I like to Read About</h1>
-      <ul>
+      <ul className="link-list">
         {links.map((link, idx) => (
           <li key={idx}>
             <a href={link.url} target="_blank" rel="noopener noreferrer" tabIndex="0">

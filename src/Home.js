@@ -1,14 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
-
+import './Home.css';
 
 function Home() {
   const [hobbies, setHobbies] = useState([
-    'Video Games',
-    'Game Development',
-    'watching movies',
-    'Skiing',
-    'Hiking',
-    'Biking',
+    'Video Games 🎮',
+    'Game Development 💻',
+    'watching movies ',
+    'Skiing ⛷️',
+    'Hiking 🥾',
+    'Biking 🚴 ',
   ]);
 
   const sortHobbies = () => {
@@ -50,43 +50,42 @@ function Home() {
   return (
     <div className="home-container">
       <div className="home-content">
-        <h1>Welcome To My Webpage !!</h1>
-
+        <h1>✌🏻 Welcome To My Page ✌🏻</h1>
         <div>
-          <h2>About me</h2>
           <img
-            src="https://www.uwb.edu/wp-content/uploads/2023/05/gml-generic-bronze-W-plaza-square.jpg"
-            alt="uwb"
-            width="200px"
+            src="/profile.jpg"
+            alt="profile picture"
+            width="700"
+            className="profile-pic"
           />
-          <p>I am a senior studying at <strong>University of Washington Bothell</strong>.</p>
-          <p>I am taking <i>CSS 480</i> and <i>CSS 481</i> this quarter.</p>
-          <p>I learned a little HTML/CSS & Javascript in CSS 481 so far but still pretty new to React.</p>
+          <div className="intro-section">
+            <p className="greeting">Hi there! 👋 Thanks for stopping by.</p>
+            <p className="intro-line">I'm <strong>Mike Zhang</strong>. Here you can explore <span className="accent">my hobbies</span> and <span className="accent">favorite reading links</span>.</p>
+            <p className="major-line">
+              I'm currently studying <strong>Computer Science & Software Engineering</strong> at the <span className="accent">University of Washington Bothell</span>.
+            </p>
+            <p className="classes-line">Some fun electives I've taken include <span className="accent">CSS 480</span> and <span className="accent">CSS 481</span>.</p>
+          </div>
         </div>
 
         <div className="hobby-section">
           <h2>My Hobbies</h2>
-          <div className="hobby-container">
+          <div className="hobby-card">
             <ul className="hobby-list">
               {hobbies.map((hobby, index) => (
-                <li
-                  key={index}
-                  tabIndex="0"
-                  ref={el => hobbyRefs.current[index] = el}
-                  onKeyDown={(e) => handleKeyDown(e, index)}
-                >
+                <li key={index} tabIndex="0">
                   {hobby}
                 </li>
               ))}
             </ul>
             <button
+              className="sort-button"
               onClick={sortHobbies}
               tabIndex="0"
               ref={buttonRef}
               onKeyDown={(e) => handleKeyDown(e, hobbies.length)}
-              className="sort-button"
             >
-              Sort Hobbies
+              Sort Alphabetically
             </button>
           </div>
         </div>
