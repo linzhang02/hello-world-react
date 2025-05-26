@@ -4,6 +4,7 @@ import Home from './Home';
 import ThingsToRead from './ThingsToRead';
 import './App.css';
 import KeyboardHelp from './KeyboardHelp';
+import GameProjects from './GameProjects';
 
 function App() {
   const navRefs = [useRef(null), useRef(null), useRef(null)];
@@ -46,6 +47,16 @@ function App() {
           </li>
           <li>
             <Link
+              to="/game-projects"
+              ref={navRefs[3]}
+              tabIndex="0"
+              onKeyDown={(e) => handleKeyDown(e, 3)}
+            >
+              🎮 Game Projects
+            </Link>
+          </li>
+          <li>
+            <Link
               to="/keyboard-help"
               ref={navRefs[2]}
               tabIndex="0"
@@ -61,6 +72,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/things-to-read" element={<ThingsToRead />} />
         <Route path="/keyboard-help" element={<KeyboardHelp />} />
+        <Route path="/game-projects" element={<GameProjects />} />
       </Routes>
     </Router>
   );
