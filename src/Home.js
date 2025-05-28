@@ -5,7 +5,7 @@ function Home() {
   const [hobbies, setHobbies] = useState([
     'Video Games 🎮',
     'Game Development 💻',
-    'watching movies ',
+    'Travelling 🗺️ ',
     'Skiing ⛷️',
     'Hiking 🥾',
     'Biking 🚴 ',
